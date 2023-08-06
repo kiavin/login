@@ -5,17 +5,13 @@ define("DB_USER", "root");
 define("DB_PASS", "kevoh");
 define("DB_NAME", "backbone");
 
-/*
+
 $username = $_POST['name'];
 $password = $_POST['pass'];
 $email = $_POST['email'];
 $mobile = $_POST['mobile'];
-$re_password = $_POST['re_pass'];*/
+$re_password = $_POST['re_pass'];
 
-$username = 'kevoh';
-$password = 'kevoh';
-$email = 'kelvin@gamil.com';
-$mobile = '0712345678';
 
 $database = new Database();
 
