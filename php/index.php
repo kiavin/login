@@ -15,7 +15,17 @@ $re_password = $_POST['re_pass'];
 
 $database = new Database();
 
-$database->query('INSERT INTO users (username, password, email, mobile) VALUES (:username, :password, :email, :mobile)');
+$database->query('select * from users where email = :email');
+$database->bind(':email', $email);
+$database->execute();
+
+$result = $database->rowCount();
+
+
+if($result){
+    $message = "An account with that email already exists";
+}else{
+    $database->query('INSERT INTO users (username, password, email, mobile) VALUES (:username, :password, :email, :mobile)');
 
 $database->bind(':username', $username);
 $database->bind(':password', $password);
@@ -24,6 +34,7 @@ $database->bind(':mobile', $mobile);
 
 $database->execute();
 $message = "You have been registered successfully";
+}
 
 ?>
 <!DOCTYPE html>
