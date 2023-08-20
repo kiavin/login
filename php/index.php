@@ -10,7 +10,7 @@ $username = $_POST['name'];
 $password = $_POST['pass'];
 $email = $_POST['email'];
 $mobile = $_POST['mobile'];
-$re_password = $_POST['re_pass'];
+$re_pass = $_POST['re_pass'];
 
 
 $database = new Database();
@@ -21,8 +21,7 @@ $database->execute();
 
 $result = $database->rowCount();
 
-
-if($result){
+if($result ){
     $message = "An account with that email already exists";
 }else{
     $database->query('INSERT INTO users (username, password, email, mobile) VALUES (:username, :password, :email, :mobile)');
