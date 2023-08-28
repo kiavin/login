@@ -42,6 +42,13 @@ $message = "You have been registered successfully";
 <title>Registration</title>
 </head>
 <body>
-<h1><?php echo $message; ?></h1>
+<div id="errorText" style="color: rgb(245, 17, 17); background-color:aliceblue;"></div>
+
+<script>
+    var message = "<?php echo $message; ?>";
+    if (message !== "") {
+        alert(message);
+    }
+</script>
 </body>
 </html>
