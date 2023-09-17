@@ -1,9 +1,13 @@
 <?php
 include 'database.php';
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "kevoh");
-define("DB_NAME", "backbone");
+include 'config.php';
+
+
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 
 $username = $_POST['name'];
@@ -21,34 +25,37 @@ $database->execute();
 
 $result = $database->rowCount();
 
-if($result ){
+if ($result) {
     $message = "An account with that email already exists";
-}else{
+} else {
     $database->query('INSERT INTO users (username, password, email, mobile) VALUES (:username, :password, :email, :mobile)');
 
-$database->bind(':username', $username);
-$database->bind(':password', $password);
-$database->bind(':email', $email);
-$database->bind(':mobile', $mobile);
+    $database->bind(':username', $username);
+    $database->bind(':password', $password);
+    $database->bind(':email', $email);
+    $database->bind(':mobile', $mobile);
 
-$database->execute();
-$message = "You have been registered successfully";
+    $database->execute();
+    $message = "You have been registered successfully";
 }
 
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<title>Registration</title>
-</head>
-<body>
-<div id="errorText" style="color: rgb(245, 17, 17); background-color:aliceblue;"></div>
 
-<script>
-    var message = "<?php echo $message; ?>";
-    if (message !== "") {
-        alert(message);
-    }
-</script>
+<head>
+    <title>Registration</title>
+</head>
+
+<body>
+    <div id="errorText" style="color: rgb(245, 17, 17); background-color:aliceblue;"></div>
+
+    <script>
+        var message = "<?php echo $message; ?>";
+        if (message !== "") {
+            alert(message);
+        }
+    </script>
 </body>
+
 </html>

@@ -38,6 +38,6 @@ if ($result) {
 </head>
 <body>
 <h1><?php echo $message; ?></h1>
-<a href="/var/www/html/kevoh.com/index.html">go to homepage</a>
+<a href="/var/www/html/kevoh.com/SingUp.html">go to homepage</a>
 </body>
 </html>

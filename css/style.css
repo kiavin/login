@@ -591,5 +591,21 @@ label.valid {
   .social-label {
     margin-right: 0px;
     margin-bottom: 10px; } }
+    .forgotpassholder {
+      text-align: center; /* Center the link horizontally */
+  }
+  
+  /* Style for the "Forgot Password?" link */
+  .forgotpass {
+      text-decoration: none; /* Remove underlines */
+      color: #007bff; /* Change the link color to blue (you can use any color you like) */
+      font-weight: bold; /* Make the text bold */
+  }
+  
+  /* Hover effect for the link */
+  .forgotpass:hover {
+      text-decoration: underline; /* Underline the link on hover */
+      color: #0056b3; /* Darker blue color on hover (adjust as needed) */
+  }
 
 /*# sourceMappingURL=style.css.map */
