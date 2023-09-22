@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset</title>
+    <link rel="stylesheet" href="/css/forgotpass.css">
+</head>
+
+<body>
+    <section class="main">
+        <div class="mainimage"></div>
+        <div class="content">
+            <section>
+                <form action="/php/forgotpassword.php" method="post">
+                    <h1>reset password</h1>
+                    <p>Enter your email address.</p>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div>
+                    <label for="reset_code">OTP</label>
+                    <input type="" name="reset_code" id="reset_code" placeholder="Enter OTP">
+                    <div class="submit">
+                        <button type="submit">Send</button>
+                    </div>
+                    <div class="loginbutton">
+                        <button><a href="/Index.html">Back to Login</a></button>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+
+    </section>
+    <!--<div class="footer">
+        <p>© 2020 - 2021</p>
+    </div>-->
+</body>
+
+</html>
