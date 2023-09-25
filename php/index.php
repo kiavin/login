@@ -1,20 +1,21 @@
 <?php
 include 'database.php';
-include 'config.php';
+require_once 'config.php';
+$db = Database_conn::getInstance();
+$conn = $db->getConnection();
 
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-$username = $_POST['name'];
+/*$username = $_POST['name'];
 $password = $_POST['pass'];
 $email = $_POST['email'];
 $mobile = $_POST['mobile'];
-$re_pass = $_POST['re_pass'];
+$re_pass = $_POST['re_pass'];*/
+$username = "kelvin";
+$password = "123456";
+$email = "kelvin@gmail.com";
+$mobile = "123456";
+
 
 
 $database = new Database();

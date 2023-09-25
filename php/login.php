@@ -1,15 +1,16 @@
 <?php
 include 'database.php';
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "kevoh");
-define("DB_NAME", "backbone");
+require_once 'config.php';
+$db = Database_conn::getInstance();
+$conn = $db->getConnection();
 
-
-$username = $_POST['name'];
-$password = $_POST['pass'];
+//$username = $_POST['name'];
+//$password = $_POST['pass'];
+$username = "kelvin";
+$password = "1234";
 $invalid = 0;
 $login = 1;
+
 
 
 $database = new Database();
