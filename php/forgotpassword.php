@@ -1,14 +1,20 @@
 <?php
 include 'database.php';
-include 'config.php';
+require_once 'config.php';
+$db = Database_conn::getInstance();
+$conn = $db->getConnection();
 
 //details from the form
-//set method to post
-$email = $_POST['email'];
+//$email = $_POST['email'];
+$email = "kelvin@gmail.com";
 
 //check if email exists
-$sql = "SELECT * FROM users WHERE email = '$email'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM users WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
 
 if(mysqli_num_rows($result) > 0){
     //email exists
